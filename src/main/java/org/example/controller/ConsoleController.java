@@ -49,6 +49,7 @@ public class ConsoleController {
                 }
                 case "3" -> driverService.task3().forEach(System.out::println);
                 case "5" -> eventService.task5ComputePoints();
+                case "7" -> eventService.task7GenerateReport();
                 case "0" -> System.exit(0);
             }
         }

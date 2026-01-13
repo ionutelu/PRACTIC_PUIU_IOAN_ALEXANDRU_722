@@ -1,9 +1,15 @@
 package org.example.service;
 
 import org.example.Model.Event;
+import org.example.Model.EventType;
 import org.example.Repository.IRepository;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class EventService {
     private IRepository<Event,Integer> eventRepository;
@@ -32,6 +38,16 @@ public class EventService {
             System.out.println("Event " + e.getId() + " -> rawPoints=" + e.getPoints() +
                     " -> computedPoints=" + calculatePoints(e));
         });
+    }
+
+    public void task7GenerateReport() {
+        Map<EventType, Long> counts = eventRepository.findAll().stream()
+                .collect(Collectors.groupingBy(Event::getEventType, Collectors.counting()));
+        try (PrintWriter pw = new PrintWriter(new FileWriter("race_report.txt"))) {
+            for (EventType et : EventType.values()) {
+                pw.println(et + " -> " + counts.getOrDefault(et, 0L));
+            }
+        } catch (IOException e) { e.printStackTrace(); }
     }
 
 
