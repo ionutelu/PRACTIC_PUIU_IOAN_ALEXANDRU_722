@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "driverId": 1,
+    "eventType": "OVERTAKE",
+    "points": 10,
+    "lap": 5
+  },
+  {
+    "id": 2,
+    "driverId": 5,
+    "eventType": "FASTEST_LAP",
+    "points": 8,
+    "lap": 12
+  },
+  {
+    "id": 3,
+    "driverId": 3,
+    "eventType": "OVERTAKE",
+    "points": 9,
+    "lap": 14
+  },
+  {
+    "id": 4,
+    "driverId": 7,
+    "eventType": "PIT_STOP",
+    "points": 4,
+    "lap": 9
+  },
+  {
+    "id": 5,
+    "driverId": 2,
+    "eventType": "TRACK_LIMITS",
+    "points": -2,
+    "lap": 7
+  },
+  {
+    "id": 6,
+    "driverId": 9,
+    "eventType": "FASTEST_LAP",
+    "points": 7,
+    "lap": 8
+  },
+  {
+    "id": 7,
+    "driverId": 6,
+    "eventType": "OVERTAKE",
+    "points": 8,
+    "lap": 20
+  },
+  {
+    "id": 8,
+    "driverId": 4,
+    "eventType": "COLLISION",
+    "points": 5,
+    "lap": 18
+  },
+  {
+    "id": 9,
+    "driverId": 8,
+    "eventType": "PIT_STOP",
+    "points": 4,
+    "lap": 16
+  },
+  {
+    "id": 10,
+    "driverId": 11,
+    "eventType": "OVERTAKE",
+    "points": 6,
+    "lap": 10
+  },
+  {
+    "id": 11,
+    "driverId": 13,
+    "eventType": "TRACK_LIMITS",
+    "points": 0,
+    "lap": 3
+  },
+  {
+    "id": 12,
+    "driverId": 14,
+    "eventType": "FASTEST_LAP",
+    "points": 8,
+    "lap": 7
+  },
+  {
+    "id": 13,
+    "driverId": 15,
+    "eventType": "PIT_STOP",
+    "points": 3,
+    "lap": 6
+  }
+]

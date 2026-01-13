@@ -1,17 +1,32 @@
 package org.example;
 
+
+import org.example.Model.Driver;
+import org.example.Model.Event;
+import org.example.Model.Penalty;
+import org.example.Repository.DriverRepository;
+import org.example.Repository.EventRepository;
+import org.example.Repository.IRepository;
+import org.example.Repository.PenaltyRepository;
+import org.example.controller.ConsoleController;
+import org.example.service.DriverService;
+import org.example.service.EventService;
+import org.example.service.PenaltyService;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+        IRepository<Driver, Integer> driverRepository = new DriverRepository("C:\\Users\\that1\\IdeaProjects\\PRACTIC_PUIU_IOAN_ALEXANDRU_722\\drivers.json");
+        IRepository<Event,Integer> eventRepository = new EventRepository("C:\\Users\\that1\\IdeaProjects\\PRACTIC_PUIU_IOAN_ALEXANDRU_722\\events.json");
+        IRepository<Penalty, Integer> penaltyRepository = new PenaltyRepository("C:\\Users\\that1\\IdeaProjects\\PRACTIC_PUIU_IOAN_ALEXANDRU_722\\penalties.json");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-        }
+
+        DriverService driverService = new DriverService(driverRepository);
+        EventService eventService = new EventService(eventRepository);
+        PenaltyService penaltyService = new PenaltyService(penaltyRepository);
+
+        ConsoleController controller = new ConsoleController (penaltyService,driverService,eventService);
+        controller.run();
     }
 }
