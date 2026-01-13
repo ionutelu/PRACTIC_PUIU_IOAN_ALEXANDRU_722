@@ -28,13 +28,29 @@ public class ConsoleController {
         System.out.println("Events loaded: " + penaltyService.getAll().size());
         System.out.println("Penalties loaded: " + eventService.getAll().size());
 
-        penaltyService.getAll();
+        // penaltyService.getAll();
         driverService.getAll().forEach(System.out::println);
-        eventService.getAll();
+        // eventService.getAll();
 
-        driverService.task2("Ferrari").forEach(System.out::println);
 
-        driverService.task3().forEach(System.out::println);
+        // driverService.task2("Ferrari").forEach(System.out::println);
+
+        // driverService.task3().forEach(System.out::println);
+
+        driverService.task4();
+
+        while(true) {
+            System.out.println("\nSelect: 2.Filter, 3.sort, 5.points, 6.Ranking, 7.Report, 0.Exit");
+            String choice = scanner.nextLine();
+            switch(choice) {
+                case "2" -> {
+                    System.out.print("Input team: ");
+                    driverService.task2(scanner.nextLine()).forEach(System.out::println);
+                }
+                case "3" -> driverService.task3().forEach(System.out::println);
+                case "0" -> System.exit(0);
+            }
+        }
 
 
     }

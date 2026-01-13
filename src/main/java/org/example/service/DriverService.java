@@ -40,7 +40,7 @@ public class DriverService {
         return drivers;
     }
 
-    public List<Driver> task4(String givenTeam){
+    public List<Driver> task4(){
         List<Driver> drivers = new ArrayList<>();
         drivers = driverRepository.findAll().stream()
                 .sorted(Comparator.comparing(Driver::getSkillLevel).reversed()
