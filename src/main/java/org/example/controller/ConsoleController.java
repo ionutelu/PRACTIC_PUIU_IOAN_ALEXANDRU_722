@@ -34,6 +34,8 @@ public class ConsoleController {
 
         driverService.task2("Ferrari").forEach(System.out::println);
 
+        driverService.task3().forEach(System.out::println);
+
 
     }
 
