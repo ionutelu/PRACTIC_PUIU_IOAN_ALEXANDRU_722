@@ -32,6 +32,8 @@ public class ConsoleController {
         driverService.getAll().forEach(System.out::println);
         eventService.getAll();
 
+        driverService.task2("Ferrari").forEach(System.out::println);
+
 
     }
 
