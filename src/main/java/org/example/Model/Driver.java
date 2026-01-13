@@ -46,7 +46,7 @@ public class Driver implements HasId<Integer>{
 
     @Override
     public String toString() {
-        return id + " | " + name + " | " + team + " | " + status + " | " + skillLevel;
+        return "[" + id +"]" + " " + name + " (" + team +")  - " + status + ", skill=" + skillLevel;
     }
 
 
